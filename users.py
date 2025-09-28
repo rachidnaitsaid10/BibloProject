@@ -42,6 +42,7 @@ def RésumeUsers(MylistUsers,MylistAime):
             if nom_complet not in livres_par_utilisateur:
                 livres_par_utilisateur[nom_complet] = []
             livres_par_utilisateur[nom_complet].append(livre)
+    print(livres_par_utilisateur)
 
     for nom_complet, age in users_dict.values():
         if nom_complet in livres_par_utilisateur:
