@@ -26,3 +26,26 @@ def Récent(Mylist):
     print("-" * 220)
 Récent(livres)
 
+
+def CreationDict(Mylist):
+    dictionnaire = {}
+    for item in Mylist:
+        if item[1] not in dictionnaire:
+            dictionnaire[item[1]] = 1
+        else:
+            dictionnaire[item[1]] += 1
+    print(dictionnaire)
+    print("-" * 220)
+CreationDict(aime_livres)
+
+def PaginationList(Mylist):
+    x=0
+    while x < len(Mylist):
+        print(f"Pagination {(x+2)//2}")
+        print(Mylist[x])
+        if x+1 < len(Mylist):
+            print(Mylist[x+1])
+        x += 2
+    print("-" * 220)
+
+PaginationList(utilisateurs)
