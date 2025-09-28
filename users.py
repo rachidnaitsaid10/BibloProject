@@ -32,19 +32,23 @@ print("-"*220)
 
 
 def RésumeUsers(MylistUsers,MylistAime):
-    DictUsers = {}
-    for x in MylistAime:
-        for y in MylistUsers:
-            if x[0] == y[0]:
-                age = y[3]
-                name = y[2] + " " + y[ 1]
-                DictUsers["name"] = name
-                DictUsers["age"] = age
-                if DictUsers["name"] in DictUsers:
-                    DictUsers["books"] = DictUsers["books"] + (x[1],)
-                else:
-                    DictUsers["books"] = (x[1],)
-        print(DictUsers)
+    users_dict = {user[0]: (f"{user[2]} {user[1]}".upper(), user[3]) for user in utilisateurs}
+    print(users_dict)
+
+    livres_par_utilisateur = {}
+    for user_id, livre in aime_livres:
+        if user_id in users_dict:
+            nom_complet, age = users_dict[user_id]
+            if nom_complet not in livres_par_utilisateur:
+                livres_par_utilisateur[nom_complet] = []
+            livres_par_utilisateur[nom_complet].append(livre)
+
+    for nom_complet, age in users_dict.values():
+        if nom_complet in livres_par_utilisateur:
+            livres_str = "', '".join(livres_par_utilisateur[nom_complet])
+            print(f"{nom_complet} ({age} ans) aime : '{livres_str}'")
+        else:
+            print(f"{nom_complet} ({age} ans) n'aime aucun livre")
 
 RésumeUsers(utilisateurs,aime_livres)
 print("-"*220)
