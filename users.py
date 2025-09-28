@@ -8,14 +8,12 @@ print("*"*220)
 def UsersMaj(Mylist):
     ListMaj=list(filter(lambda x : x[3]>18, Mylist))
     return ListMaj
-print(UsersMaj(utilisateurs))
-print("-"*220)
+    print("-"*220)
 
 def NamesMAj(Mylist):
     ListNames=list(map(lambda x: f"{x[1].upper()} {x[2].upper()}", Mylist))
     return ListNames
-print(NamesMAj(utilisateurs))
-print("-"*220)
+    print("-"*220)
 
 def DictUsers(MylistUsers,MylistAime):
     DictUsers = {}
@@ -27,8 +25,7 @@ def DictUsers(MylistUsers,MylistAime):
                 else:
                     DictUsers[y[2] + " " + y[1]] = (x[1],)
     print(DictUsers)
-DictUsers(utilisateurs,aime_livres)
-print("-"*220)
+    print("-"*220)
 
 
 def RésumeUsers(MylistUsers,MylistAime):
@@ -51,8 +48,7 @@ def RésumeUsers(MylistUsers,MylistAime):
         else:
             print(f"{nom_complet} ({age} ans) n'aime aucun livre")
 
-RésumeUsers(utilisateurs,aime_livres)
-print("-"*220)
+    print("-"*220)
 
 
 

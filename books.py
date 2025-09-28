@@ -15,7 +15,6 @@ def SortingData(Mylist):
 def Ancien(Mylist):
     SotoringList = SortingData(Mylist)
     AncienLiver = SotoringList[0]
-    print(AncienLiver)
     print("-" * 220)
 
 
